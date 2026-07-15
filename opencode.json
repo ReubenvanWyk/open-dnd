@@ -1,0 +1,114 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "instructions": [
+    "AGENTS.md",
+    "sessions/session-template.md"
+  ],
+  "autoupdate": true,
+  "agent": {
+    "dm-assistant": {
+      "description": "D&D 5.5e Dungeon Master co-pilot — runs sessions, tracks world state, manages NPCs and encounters",
+      "mode": "primary",
+      "temperature": 0.7,
+      "color": "#FF5733"
+    },
+    "story-weaver": {
+      "description": "Generates branching narrative paths based on player decisions and world state",
+      "mode": "subagent",
+      "temperature": 0.8,
+      "permission": {
+        "read": "allow",
+        "edit": "deny",
+        "bash": "deny",
+        "write": "deny"
+      }
+    }
+  },
+  "command": {
+    "newsession": {
+      "description": "Start a new session log with context from previous sessions",
+      "template": "Create a new session log for today's D&D 5.5e session.\n\nFirst, list all existing files in sessions/ to find the highest session number. The new file should be session-NNN.md where NNN is the highest existing number + 1, padded to 3 digits (e.g. 001, 002, 010).\n\nRead the most recent session file, world/timeline.md, world/locations.md, world/factions.md, and world/branches.md for current world state and any open story branches.\n\nThen create the new session file using the session-template.md format.\n\nPlayers present: $ARGUMENTS\n\nSet the scene based on where the party ended last session.",
+      "agent": "dm-assistant"
+    },
+    "recap": {
+      "description": "Generate a narrated 'previously on...' recap for players",
+      "template": "Read the last 3 session files from sessions/ and world/timeline.md. Generate a dramatic narrated recap suitable for reading to players before the session starts. Keep it to 2-3 paragraphs. Focus on: where the party is, what they were doing, unresolved plot threads, and any major NPCs they interacted with.",
+      "agent": "dm-assistant",
+      "subtask": true
+    },
+    "storybranch": {
+      "description": "Generate branching story paths from recent player decisions",
+      "template": "Read the most recent session file from sessions/, world/locations.md, world/factions.md, world/timeline.md, and world/branches.md. Collect the key player decisions, unresolved threads, current faction relationships, and known locations.\n\nThen use the task tool to delegate creative generation to the story-weaver subagent. Pass it this context and instruct it to return 3-5 distinct story branches. Each branch should include: hook, immediate stakes, long-term implications, faction/NPC reactions, and DM notes.\n\nOnce the story-weaver returns the branches, write them into world/branches.md using the existing format. Mark all branches as Open. Record the session number and the player decision that triggered this branch set. Then confirm to the DM what was generated.",
+      "agent": "dm-assistant"
+    },
+    "develop-npc": {
+      "description": "Generate a detailed NPC with personality, goals, and plot hooks",
+      "template": "Read world/locations.md and world/factions.md for context. Create a detailed D&D 5.5e NPC with:\n\nName: $ARGUMENTS\n\nInclude:\n- Race, class (if any), appearance\n- Personality traits, ideals, bonds, flaws\n- Short-term and long-term goals\n- How they connect to existing factions/locations\n- 3 plot hooks involving this NPC\n- Stat block reference (CR, key abilities)\n\nSave to characters/npcs/{name}.md",
+      "agent": "dm-assistant",
+      "subtask": true
+    },
+    "create-pc": {
+      "description": "Create a player character sheet",
+      "template": "Create a D&D 5.5e player character sheet for $ARGUMENTS.\n\nFirst, read characters/pcs/pc-template.md for the format.\nThen read any existing PC sheets in characters/pcs/ for style reference.\n\nGenerate a complete, playable level 1 character including:\n- Chosen race, class, background, alignment\n- Rolled ability scores (use python3 dice.py 4d6dl1 six times to generate stats)\n- HP, AC, proficiency bonus, speed\n- Saving throws, skills (mark proficient ones)\n- Class features and racial traits\n- Starting equipment and inventory\n- Personality traits, ideals, bonds, flaws\n- Brief backstory (2-3 paragraphs)\n- Spellcasting section if applicable\n\nSave the completed sheet to characters/pcs/{name}.md",
+      "agent": "dm-assistant",
+      "subtask": true
+    },
+    "save": {
+      "description": "Snapshot current campaign state to save/ directory",
+      "template": "Read all session files from sessions/, all world state files (world/locations.md, world/factions.md, world/timeline.md, world/branches.md), and all character sheets from characters/. Create a comprehensive campaign snapshot as a JSON file in save/ named save_YYYY-MM-DD_HHMM.json. Include session count, active story branches with status, faction relationships, discovered locations, PC levels, and key NPCs.",
+      "agent": "dm-assistant",
+      "subtask": true
+    },
+    "combat": {
+      "description": "Run a combat encounter — initiative, turn tracking, damage, resolution",
+      "template": "",
+      "agent": "dm-assistant"
+    },
+    "seed-world": {
+      "description": "Interactive campaign world seeding — fill out the campaign primer and propagate to world files",
+      "template": "",
+      "agent": "dm-assistant"
+    },
+    "load": {
+      "description": "Restore campaign state from a save file",
+      "template": "First, list all files in save/ and display them to the user with their timestamps. Ask which save file to restore. Then read that save file and use its contents to restore world/locations.md, world/factions.md, world/timeline.md, and world/branches.md to the saved state. Confirm what was restored.",
+      "agent": "dm-assistant",
+      "subtask": true
+    },
+    "status": {
+      "description": "Show current campaign status at a glance",
+      "template": "Read the most recent session file, world/timeline.md, world/locations.md, world/factions.md, and world/branches.md. Generate a compact DM-facing status summary including:\n- Last session date and location\n- Open story branches\n- Faction standing changes\n- Unresolved plot hooks\n- PC levels and health status (if sheets exist)\n- Any ticking clocks or time-sensitive situations",
+      "agent": "dm-assistant",
+      "subtask": true
+    },
+    "dm-help": {
+      "description": "List all available DM commands with descriptions",
+      "template": "",
+      "agent": "dm-assistant"
+    },
+    "resolve-action": {
+      "description": "Guided action resolution — determines action type, sets DC, rolls, determines outcome",
+      "template": "",
+      "agent": "dm-assistant"
+    },
+    "check": {
+      "description": "Quick ability check — pick a skill, set DC, roll, determine outcome",
+      "template": "",
+      "agent": "dm-assistant",
+      "subtask": true
+    },
+    "attack": {
+      "description": "Quick attack roll — target, roll to hit, roll damage, determine outcome",
+      "template": "",
+      "agent": "dm-assistant",
+      "subtask": true
+    },
+    "save": {
+      "description": "Quick saving throw — set DC, roll save, determine effect",
+      "template": "",
+      "agent": "dm-assistant",
+      "subtask": true
+    }
+  },
+  "default_agent": "dm-assistant"
+}

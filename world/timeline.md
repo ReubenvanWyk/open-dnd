@@ -16,3 +16,4 @@
 | ~6 months ago | Pre-campaign | Varesh leaves the Sunspear command structure to investigate the Bloodstone alone. She gathers a crew of misfits. |
 | ~6 months ago | Pre-campaign | Fronn stumbles into Oakhaven half-dead. Tobias and Jean nurse him back to health. He becomes "Yeast" the baker. |
 | Present | Session-000 | Campaign begins. Fronn is recognised by gamblers in Oakhaven and flees to protect the village. Varesh's party is in Kamadan. Rumours of Bloodstone research begin spreading. |
+| 2026-07-22 | Session-001 | Varesh, Idris, and Liyana escort a Skyanite shipment toward Vaelorian. Fronn encounters them on the road. Bandits attack. Party defeats them, interrogates driver, discovers Skyanite cargo. Fronn recognises the crystal from Skyvein Hollow. Devil Mask found in the carriage. Party travels 2 days to Vaelorian and arrives at dusk. |

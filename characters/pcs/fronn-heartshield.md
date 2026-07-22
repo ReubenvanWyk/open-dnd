@@ -83,7 +83,7 @@ None
 **Weapons & Armor:**
 - War pick
 - Shield (+2 AC)
-- Devil Mask (ornamental, 25 gp value)
+- Devil Mask (found in the Skyanite carriage on the road to Vaelorian — Session-001)
 
 **Adventuring Gear:**
 - Traveler's clothes (2 sets)

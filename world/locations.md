@@ -195,3 +195,12 @@
 - **Description:** A peaceful valley village where Fronn found refuge after escaping the gladiator pits. Home to a small bakery run by Tobias and his family.
 - **Notable NPCs:** Tobias (baker), Jean, Mina
 - **Points of interest:** Village bakery, rustic cabin on the edge of town
+
+---
+
+## Vaelorian
+- **Type:** Walled City
+- **First discovered:** Session-001
+- **Description:** A city with an Adventurer's Guild, guarded gates, and outlying villages. The party arrived at dusk with a carriage full of Skyanite.
+- **Government:** Local city guard at the gates
+- **Points of interest:** Adventurer's Guild of Vaelorian, city gates, outskirts villages

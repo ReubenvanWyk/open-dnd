@@ -116,3 +116,11 @@ Relationships: Allied | Friendly | Neutral | Suspicious | Hostile
 - **Resources:** Mountain raiders; slave-trading connections; armaments
 - **Territory / Influence:** Northern Crests
 - **Notes:** A brutal warband of mountain raiders who devised a scheme to claim Skyvein Hollow's Skyanite. Unable to breach the symbiotic barrier, they kidnapped Fronn's daughter Elara to force his surrender. They tortured Fronn for months, then sold him into slavery when they could not extract the barrier's secret.
+
+## Adventurer's Guild of Vaelorian
+- **Relationship:** Neutral (no contact yet)
+- **Key Members:** [Unknown guildmaster]
+- **Goals:** Distribute quests, regulate adventurers, facilitate trade
+- **Resources:** Guild hall, contracts, network of adventurers
+- **Territory / Influence:** Vaelorian
+- **Notes:** The destination of the Skyanite shipment. The party was delivering the Skyanite here under the guise of a routine escort mission. They have not yet entered the guild.

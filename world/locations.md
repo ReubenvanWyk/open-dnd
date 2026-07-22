@@ -172,3 +172,26 @@
 - **Family Symbol:** A golden spear crossing a desert flower
 - **Family Motto:** "Stand beneath the sun, carry the burden"
 - **Notable NPCs:** Karim Ashkar, Nadijeh Ashkar, Varesh Ashkar, Samira Ashkar
+
+---
+
+## Northern Crests
+- **Type:** Mountain Region
+- **First discovered:** Pre-campaign
+- **Description:** A rugged mountain range inhabited by scattered chiefdoms and clans. Home to Skyvein Hollow and rich in Skyanite mineral deposits.
+
+### Skyvein Hollow
+- **Type:** Mountain Chiefdom
+- **Region:** Northern Crests
+- **First discovered:** Pre-campaign
+- **Description:** A small mountain chiefdom blessed with Skyanite, a light-turquoise mineral that forms a symbiotic invisible barrier around the hollow, repelling hostile intent. The villagers mine only what they need, refusing to construct weapons or sell enchanted relics that might disrupt the balance.
+- **Notable NPCs:** Fronn Heartshield (former chief), Elara Heartshield, unnamed sister and mother of Fronn
+- **Current state:** Unknown to Fronn (he has not seen it in 7 years)
+
+### Oakhaven
+- **Type:** Valley Village
+- **Region:** Northern Crests foothills
+- **First discovered:** Pre-campaign
+- **Description:** A peaceful valley village where Fronn found refuge after escaping the gladiator pits. Home to a small bakery run by Tobias and his family.
+- **Notable NPCs:** Tobias (baker), Jean, Mina
+- **Points of interest:** Village bakery, rustic cabin on the edge of town

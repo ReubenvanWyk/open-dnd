@@ -108,3 +108,11 @@ Relationships: Allied | Friendly | Neutral | Suspicious | Hostile
 - **Resources:** Archives; excavation sites; scholarly expertise
 - **Territory / Influence:** Vabbi
 - **Notes:** Predecessor to the Durmand Priory. Fascinated by the Bloodstone. Unlike the Sunspears, they do not fear knowledge. Philosophy: "A secret buried is a disaster waiting to happen."
+
+## The Iron-Blood Vanguard
+- **Relationship:** Hostile
+- **Key Members:** [Unknown warlord]
+- **Goals:** Acquire Skyanite; conquer mountain chiefdoms; sell captives into slavery
+- **Resources:** Mountain raiders; slave-trading connections; armaments
+- **Territory / Influence:** Northern Crests
+- **Notes:** A brutal warband of mountain raiders who devised a scheme to claim Skyvein Hollow's Skyanite. Unable to breach the symbiotic barrier, they kidnapped Fronn's daughter Elara to force his surrender. They tortured Fronn for months, then sold him into slavery when they could not extract the barrier's secret.
